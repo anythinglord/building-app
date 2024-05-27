@@ -1,0 +1,14 @@
+.nb-root {
+    background-color: #1c3144;
+    height: 50px;
+    color: #C3D898;
+    font-size: 25px;
+    font-weight: bold;    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nb-title {
+    padding-left: 15px;
+}
