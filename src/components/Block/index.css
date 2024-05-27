@@ -1,4 +1,8 @@
 .b-root {
+    margin-bottom: 20px;
+}
+
+.b-head {
     background-color: #1c3144;
     height: 70px;
     display: flex;
@@ -7,6 +11,6 @@
     font-weight: bold;
     font-size: 20px;
     justify-content: space-around;
-    margin-bottom: 15px;
+    
     cursor: pointer;
 }

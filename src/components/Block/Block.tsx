@@ -1,17 +1,40 @@
 import { useState } from 'react'
-import './index.css'
 import { BlockInterface } from '../../interfaces';
 import { defaultBlocks } from '../../data';
+import { Accordion } from '../Accordion/Accordion';
+import './index.css'
+import { Building } from '../Building/Building';
 
 export const Block: React.FC = () => {
 
-  const [blocks, setBlocks] = useState<Array<BlockInterface>>(defaultBlocks)
-  const BlocksComponent = blocks.map((block)=>{
-    return (
-      <div className='b-root'>{block.name}</div>
-    )
-  })
+  const [blocks] = useState<Array<BlockInterface>>(defaultBlocks)
+  const [activeKeys, setActiveKeys] = useState<Array<number>>([]);
+
+  const showElements = (key: number): void => {
+    const newActiveKeys = [...activeKeys];
+    if (activeKeys.includes(key)) {
+      const keyIndex = activeKeys.indexOf(key);
+      newActiveKeys.splice(keyIndex, 1);
+      setActiveKeys(newActiveKeys)
+    } else {
+      newActiveKeys.push(key);
+      setActiveKeys(newActiveKeys)
+    }
+  }
+
   return (
-    <div>{BlocksComponent}</div>
+    <div>
+      {blocks.map((block, index) => (
+        <div className='b-root' key={index}>
+          <div className='b-head' onClick={() => { showElements(index) }}>
+            {block.name}
+            <div>
+              <i className="fa-solid fa-chevron-right" />
+            </div>
+          </div>
+          {activeKeys.includes(index) && <Building />}
+        </div>
+      ))}
+    </div>
   )
 }
