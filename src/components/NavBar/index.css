@@ -1,14 +1,18 @@
 .nb-root {
     background-color: #1c3144;
-    height: 50px;
+    height: 65px;
     color: #C3D898;
     font-size: 25px;
     font-weight: bold;    
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 
 .nb-title {
     padding-left: 15px;
+}
+
+.nb-icon {
+    padding-right: 15px;
 }
