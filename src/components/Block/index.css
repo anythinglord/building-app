@@ -1,0 +1,11 @@
+.b-root {
+    background-color: #1c3144;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
