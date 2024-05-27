@@ -7,6 +7,6 @@
 
 .item {
   flex-grow: 1;
-  border: 1px solid #ccc;
+  /*border: 1px solid #ccc;*/
   padding: 20px
 }

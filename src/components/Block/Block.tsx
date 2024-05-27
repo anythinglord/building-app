@@ -4,6 +4,7 @@ import { defaultBlocks } from '../../data';
 import { Accordion } from '../Accordion/Accordion';
 import './index.css'
 import { Building } from '../Building/Building';
+import { ArrowIcon } from '../../icons/ArrowIcon';
 
 export const Block: React.FC = () => {
 
@@ -28,9 +29,7 @@ export const Block: React.FC = () => {
         <div className='b-root' key={index}>
           <div className='b-head' onClick={() => { showElements(index) }}>
             {block.name}
-            <div>
-              <i className="fa-solid fa-chevron-right" />
-            </div>
+            <ArrowIcon state={activeKeys.includes(index)} />
           </div>
           {activeKeys.includes(index) && <Building />}
         </div>
