@@ -10,6 +10,17 @@
     color: #fff;
     font-weight: bold;
     font-size: 20px;
-    justify-content: space-around;
+    justify-content: space-between;
     cursor: pointer;
+}
+
+.b-name {
+    padding-left: 15px;
+}
+
+.b-icons {
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { BlockInterface } from '../../interfaces';
 import { defaultBlocks } from '../../data';
-import { Accordion } from '../Accordion/Accordion';
-import './index.css'
 import { Building } from '../Building/Building';
 import { ArrowIcon } from '../../icons/ArrowIcon';
+import './index.css'
+import { GeneralIcon } from '../../icons/GeneralIcon';
 
 export const Block: React.FC = () => {
 
@@ -28,8 +28,12 @@ export const Block: React.FC = () => {
       {blocks.map((block, index) => (
         <div className='b-root' key={index}>
           <div className='b-head' onClick={() => { showElements(index) }}>
-            {block.name}
-            <ArrowIcon state={activeKeys.includes(index)} />
+            <div className="b-name">{block.name}</div>
+            <div className='b-icons'>
+              <GeneralIcon name='plus' />
+              <GeneralIcon name='trash'/>
+              {/* <ArrowIcon state={activeKeys.includes(index)} />*/}
+            </div>
           </div>
           {activeKeys.includes(index) && <Building />}
         </div>

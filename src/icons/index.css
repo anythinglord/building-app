@@ -1,0 +1,10 @@
+.icon-root {
+    background-color: var(--second-bg-color);
+    height: 34px;
+    width: 34px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 17px;
+}
