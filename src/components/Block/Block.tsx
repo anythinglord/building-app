@@ -2,14 +2,27 @@ import { useState } from 'react'
 import { BlockInterface } from '../../interfaces';
 import { defaultBlocks } from '../../data';
 import { Building } from '../Building/Building';
-import { ArrowIcon } from '../../icons/ArrowIcon';
 import './index.css'
 import { GeneralIcon } from '../../icons/GeneralIcon';
 
 export const Block: React.FC = () => {
 
-  const [blocks] = useState<Array<BlockInterface>>(defaultBlocks)
+  const [blocks, setBlocks] = useState<Array<BlockInterface>>(defaultBlocks)
   const [activeKeys, setActiveKeys] = useState<Array<number>>([]);
+
+  const addBuilding = (blockIndex: number) => {
+    const nextIndex = blocks[blockIndex].buildings.length + 1
+    const newBuilding = { name: 'Building ' + nextIndex }
+    const newBlocks = [...blocks];
+    newBlocks[blockIndex].buildings.push(newBuilding)
+    setBlocks(newBlocks)
+  }
+
+  const removeBuilding = (blockIndex: number, buildingIndex: number) => {
+    const newBlocks = [...blocks];
+    newBlocks[blockIndex].buildings.splice(buildingIndex, 1)
+    setBlocks(newBlocks)
+  }
 
   const showElements = (key: number): void => {
     const newActiveKeys = [...activeKeys];
@@ -27,15 +40,23 @@ export const Block: React.FC = () => {
     <div>
       {blocks.map((block, index) => (
         <div className='b-root' key={index}>
-          <div className='b-head' onClick={() => { showElements(index) }}>
-            <div className="b-name">{block.name}</div>
+          <div className='b-head'>
+            <div className="b-name" onClick={() => { showElements(index) }}>
+              {block.name}
+            </div>
             <div className='b-icons'>
-              <GeneralIcon name='plus' />
-              <GeneralIcon name='trash'/>
-              {/* <ArrowIcon state={activeKeys.includes(index)} />*/}
+              <button className='general-btn' onClick={() => { addBuilding(index) }}>
+                <GeneralIcon name='plus' />
+              </button>
+              <GeneralIcon name='trash' />
             </div>
           </div>
-          {activeKeys.includes(index) && <Building />}
+          {activeKeys.includes(index) &&
+            <Building
+              data={block.buildings} remove={removeBuilding}
+              blockIndex={index}
+            />
+          }
         </div>
       ))}
     </div>

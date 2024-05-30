@@ -16,6 +16,10 @@
 
 .b-name {
     padding-left: 15px;
+    flex-grow: 1;
+    height: 70px;
+    display: flex;
+    align-items: center;
 }
 
 .b-icons {

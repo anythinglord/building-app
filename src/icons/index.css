@@ -3,8 +3,25 @@
     height: 34px;
     width: 34px;
     font-size: 17px;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 17px;
+}
+
+.icon-primary {
+    background-color: var(--main-bg-color);
+}
+
+.icon-primary:hover {
+    background-color: var(--main-clear-bg-color);
+}
+
+.icon-secondary {
+    background-color: var(--second-bg-color);
+}
+
+.icon-secondary:hover {
+    background-color: var(--second-clear-bg-color);
 }

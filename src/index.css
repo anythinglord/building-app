@@ -4,3 +4,9 @@
   font-family: "Nunito Sans", sans-serif;
   font-optical-sizing: auto;
 }
+
+.general-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

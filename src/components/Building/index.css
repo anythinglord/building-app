@@ -1,6 +1,23 @@
 .bui-root {
     background-color: #596f62;
     height: 60px;
-    padding: 15px;
     color: #fff;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bui-name {
+    padding-left: 15px;
+    flex-grow: 1;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.bui-icons {
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
 }

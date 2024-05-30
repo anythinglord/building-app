@@ -1,4 +1,6 @@
 :root {
   --main-bg-color: #1c3144;
+  --main-clear-bg-color: rgb(28, 49, 68,.7);
   --second-bg-color: #596f62;
+  --second-clear-bg-color: rgb(89, 111, 98,.7);
 }
