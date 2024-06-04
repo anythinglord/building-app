@@ -2,13 +2,14 @@ import { useState } from 'react'
 import { BlockInterface } from '../../interfaces';
 import { defaultBlocks } from '../../data';
 import { Building } from '../Building/Building';
-import './index.css'
 import { GeneralIcon } from '../../icons/GeneralIcon';
+import './index.css'
+import { useHandler } from '../../hooks/useHandler';
 
 export const Block: React.FC = () => {
 
   const [blocks, setBlocks] = useState<Array<BlockInterface>>(defaultBlocks)
-  const [activeKeys, setActiveKeys] = useState<Array<number>>([]);
+  const { showElements, isOpen } = useHandler();
 
   const addBuilding = (blockIndex: number) => {
     const nextIndex = blocks[blockIndex].buildings.length + 1
@@ -24,18 +25,6 @@ export const Block: React.FC = () => {
     setBlocks(newBlocks)
   }
 
-  const showElements = (key: number): void => {
-    const newActiveKeys = [...activeKeys];
-    if (activeKeys.includes(key)) {
-      const keyIndex = activeKeys.indexOf(key);
-      newActiveKeys.splice(keyIndex, 1);
-      setActiveKeys(newActiveKeys)
-    } else {
-      newActiveKeys.push(key);
-      setActiveKeys(newActiveKeys)
-    }
-  }
-
   return (
     <div>
       {blocks.map((block, index) => (
@@ -49,9 +38,10 @@ export const Block: React.FC = () => {
                 <GeneralIcon name='plus' />
               </button>
               <GeneralIcon name='trash' />
+              <GeneralIcon name={`chevron-${isOpen(index) ? 'down': 'right' }`} variant='primary'/>
             </div>
           </div>
-          {activeKeys.includes(index) &&
+          {isOpen(index) &&
             <Building
               data={block.buildings} remove={removeBuilding}
               blockIndex={index}

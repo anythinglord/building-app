@@ -1,5 +1,5 @@
 .bui-root {
-    background-color: #596f62;
+    background-color: var(--second-clear-bg-color);
     height: 60px;
     color: #fff;
     margin-bottom: 2px;

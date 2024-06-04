@@ -1,4 +1,8 @@
-.f-root {
+.f.root {
+    margin-bottom: 20px;
+}
+
+.f-head {
     background-color: #1c3144;
     height: 70px;
     display: flex;
@@ -8,4 +12,19 @@
     font-size: 20px;
     justify-content: space-around;
     cursor: pointer;
+}
+
+.f-name {
+    padding-left: 15px;
+    flex-grow: 1;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.f-icons {
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }

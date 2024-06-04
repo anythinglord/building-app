@@ -1,12 +1,10 @@
-import { useState } from 'react'
-import './App.css'
 import { NavBar } from './components/NavBar/NavBar'
 import { Block } from './components/Block/Block'
 import { Floor } from './components/Floor/Floor'
+import { Room } from './components/Room/Room'
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
       <NavBar />
@@ -17,7 +15,9 @@ function App() {
         <div className="item">
           <Floor/>
         </div>
-        <div className="item">c</div>
+        <div className="item">
+          <Room />
+        </div>
         <div className="item">d</div>
       </div>
     </div>
