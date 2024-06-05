@@ -12,3 +12,7 @@
   /*border: 1px solid #ccc;*/
   padding: 20px
 }
+
+.static-container {
+  max-width: 22vw;
+}

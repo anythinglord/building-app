@@ -1,23 +1,52 @@
+import { useState } from 'react';
+import { Draggable, Droppable } from 'react-beautiful-dnd';
 import { useHandler } from '../../hooks/useHandler'
 import { GeneralIcon } from '../../icons/GeneralIcon'
-import './index.css'
+import { Space } from '../Room/Space';
+import { FloorInterface } from '../../interfaces';
+import { defaultFloors } from '../../data';
+import '../Block/index.css'
 
 export const Floor: React.FC = () => {
 
+  const [floors] = useState<FloorInterface[]>(defaultFloors)
   const { showElements, isOpen } = useHandler();
 
   return (
-    <div className='f-root'>
-      <div className="f-head">
-        <div className="f-name" onClick={() => { showElements(1) }}>
-          Floor 1
+    <div>{floors.map((floor, index) => (
+      <div className='b-root' key={index}>
+        <div className="b-head">
+          <div className="b-name" onClick={() => { showElements(index) }}>
+            {floor.name}
+          </div>
+          <div className="b-icons">
+            <GeneralIcon name='trash' />
+            <GeneralIcon name={`chevron-${isOpen(index) ? 'down' : 'right'}`} variant='primary' />
+          </div>
         </div>
-        <div className="f-icons">
-          <GeneralIcon name='trash' />
-          <GeneralIcon name={`chevron-${isOpen(1) ? 'down': 'right' }`} variant='primary'/>
-        </div>
+        {isOpen(index) &&
+          <Droppable droppableId='spaces'>
+            {(provided, snapshot) => (
+              <div 
+                ref={provided.innerRef} {...provided.droppableProps} 
+                className={`${snapshot.isDraggingOver ? 'dragging-over' : null}`}
+                >
+                {floor.spaces.map((space, spaceIndex) => (
+                  <Draggable key={spaceIndex} draggableId={spaceIndex.toString()} index={spaceIndex}>
+                    {(providedDraggable) => (
+                      <div className='draggable' ref={providedDraggable.innerRef} {...providedDraggable.dragHandleProps} {...providedDraggable.draggableProps}>
+                        <Space  name={space.name} />                        
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        }
       </div>
-      {isOpen(1) && <h2>rooms</h2>}
-    </div>
+    ))}</div>
+
   )
 }

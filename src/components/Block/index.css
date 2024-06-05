@@ -2,6 +2,10 @@
     margin-bottom: 20px;
 }
 
+.dragging-over {
+    border: 2px dotted #336f9f;
+}
+
 .b-head {
     background-color: #1c3144;
     height: 70px;

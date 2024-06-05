@@ -6,3 +6,12 @@ export interface BlockInterface {
 export interface BuildingInterface {
     name: string
 }
+
+export interface FloorInterface {
+    name: string
+    spaces: SpaceInterface[]
+}
+
+export interface SpaceInterface {
+    name: string
+}
