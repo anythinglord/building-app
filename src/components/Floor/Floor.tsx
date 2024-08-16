@@ -25,14 +25,14 @@ export const Floor: React.FC = () => {
           </div>
         </div>
         {isOpen(index) &&
-          <Droppable droppableId='spaces'>
+          <Droppable droppableId={`spaceGroup-${index}`}>
             {(provided, snapshot) => (
               <div 
                 ref={provided.innerRef} {...provided.droppableProps} 
                 className={`${snapshot.isDraggingOver ? 'dragging-over' : null}`}
                 >
                 {floor.spaces.map((space, spaceIndex) => (
-                  <Draggable key={spaceIndex} draggableId={spaceIndex.toString()} index={spaceIndex}>
+                  <Draggable key={spaceIndex} draggableId={`space-${index}-${spaceIndex}`} index={spaceIndex}>
                     {(providedDraggable) => (
                       <div className='draggable' ref={providedDraggable.innerRef} {...providedDraggable.dragHandleProps} {...providedDraggable.draggableProps}>
                         <Space  name={space.name} />                        

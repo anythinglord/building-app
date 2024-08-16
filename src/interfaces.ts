@@ -13,5 +13,6 @@ export interface FloorInterface {
 }
 
 export interface SpaceInterface {
-    name: string
+    name: string,
+    area?: string
 }

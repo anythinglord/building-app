@@ -40,3 +40,10 @@ export const defaultFloors: FloorInterface[] = [
         ]
     }
 ]
+
+export const defaultSpaces = [
+    { name: 'Space A' },
+    { name: 'Space B' },
+    { name: 'Space C' },
+    { name: 'Space D' },
+]
