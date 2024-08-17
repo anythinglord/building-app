@@ -1,5 +1,6 @@
 export interface BlockInterface {
     name: string
+    index: number
     buildings: BuildingInterface[]
 }
 

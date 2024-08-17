@@ -1,5 +1,10 @@
 .b-root {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.b-buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 .dragging-over {

@@ -17,7 +17,7 @@ function App() {
     <div>
       <NavBar />
       <div className='container'>
-        <div className="item">
+        <div className="item ">
           <Block />
         </div>
         <DragDropContext onDragEnd={handleOnDragEnd} /*onDragStart={handleOnDragStart}*/>
