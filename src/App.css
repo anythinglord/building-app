@@ -44,7 +44,7 @@
   cursor: pointer;
   border-radius: 15px;
   &:hover {
-      background-color: rgb(191 219 254);
+    background-color: rgb(191 219 254);
   };
   transition: border-radius 0.3s ease;
 }
@@ -60,6 +60,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;  
+}
+
+.smashup, .smashup:last-child {
+  &:hover {
+    background-color: rgb(191 219 254);
+  }
+}
+
+.smash-active {
+  background-color: rgb(191 219 254);
 }
 
 .smash-item:last-child {
@@ -69,6 +80,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;  
   border-radius: 0 0 15px 15px;
 }
 

@@ -8,6 +8,11 @@ export interface BuildingInterface {
     name: string
 }
 
+export interface ActiveElement {
+    block: number
+    building: number
+}
+
 export interface FloorInterface {
     name: string
     spaces: SpaceInterface[]

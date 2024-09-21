@@ -17,7 +17,7 @@ export const Model = ({ data }: Props): JSX.Element => {
           {data.map((model, spaceIndex) => (
             <Draggable key={spaceIndex} draggableId={'spaceModel-'+spaceIndex.toString()} index={spaceIndex}>
               {(providedDraggable) => (
-                <div className='bui-root draggable' ref={providedDraggable.innerRef} {...providedDraggable.dragHandleProps} {...providedDraggable.draggableProps}>
+                <div className='smash-item draggable' ref={providedDraggable.innerRef} {...providedDraggable.dragHandleProps} {...providedDraggable.draggableProps}>
                   <div className="bui-name">
                     {model.name}
                   </div>

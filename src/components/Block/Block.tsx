@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { BlockInterface } from '../../interfaces';
+import { ActiveElement, BlockInterface } from '../../interfaces';
 import { defaultBlocks } from '../../data';
 import { Building } from '../Building/Building';
 import { GeneralIcon } from '../../icons/GeneralIcon';
 import { useHandler } from '../../hooks/useHandler';
 import './index.css'
 
-export const Block: React.FC = () => {
+export const Block = () => {
 
   const [blocks, setBlocks] = useState<Array<BlockInterface>>(defaultBlocks)
   const { showElements, isOpen } = useHandler();

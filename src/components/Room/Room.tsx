@@ -13,9 +13,12 @@ export const Room: React.FC = () => {
 
   return (
     <div className='f-root'>
-      <div className='f-head'>
+      <div className='smash-title'>
+        <h3>Rooms</h3>
+      </div>
+      <div className={`smash-box ${isOpen(1) ? 'smash-box-open': ''}`}>
         <div className='f-name' onClick={() => { showElements(1) }}>
-          Rooms
+          General
         </div>
         <div className="f-icons">
           <GeneralIcon name={`chevron-${isOpen(1) ? 'down' : 'right'}`} variant='primary' />
