@@ -7,7 +7,7 @@ interface Props {
 
 export const Space = ({ name }: Props): JSX.Element => {
   return (
-    <div className='bui-root' /*ref={ref}*/>
+    <div className='smash-item' /*ref={ref}*/>
       <div className="bui-name">
         {name}
       </div>

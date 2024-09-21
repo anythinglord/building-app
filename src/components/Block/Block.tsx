@@ -52,7 +52,7 @@ export const Block: React.FC = () => {
 
   return (
     <div>
-      <div className='b-main'>
+      <div className='smash-title'>
         <h3>Blocks</h3>
         <button className='general-btn' onClick={addBlock}>
           <GeneralIcon name='plus' />
@@ -60,11 +60,11 @@ export const Block: React.FC = () => {
       </div>
       {blocks.map((block, index) => (
         <div className='b-root' key={index}>
-          <div className={`${isOpen(index) ? 'b-head-open': 'b-head'}`}>
+          <div className={`smash-box ${isOpen(index) ? 'smash-box-open': ''}`}>
             <div className="b-name" onClick={() => { showElements(index) }}>
               {block.name}
             </div>
-            <div className='b-icons'>
+            <div className='smash-icons'>
               <button className='general-btn' onClick={() => { addBuilding(index) }}>
                 <GeneralIcon name='plus' />
               </button>

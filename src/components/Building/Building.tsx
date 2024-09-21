@@ -12,7 +12,7 @@ export const Building = ({ data, blockIndex, remove }: Props): JSX.Element => {
   return (
     <div>
       {data.map((building, index) => (
-        <div className="bui-root">
+        <div className="smash-item">
           <div className="bui-name">
             {building.name}
           </div>

@@ -2,53 +2,8 @@
     margin-bottom: 10px;
 }
 
-
-.b-main {
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(191 219 254);
-    margin-bottom: 20px;
-    padding: 0 15px 0 15px;
-    border-radius: 15px 15px 15px 0;
-    color: rgb(30 64 175);
-    font-size: 14px;
-}
-
 .dragging-over {
     border: 2px dotted #336f9f;
-}
-
-
-.b-head {
-    background-color: rgb(219 234 254);
-    height: 40px;
-    display: flex;
-    align-items: center;
-    color: rgb(29 78 216);
-    font-weight: bold;
-    font-size: 16px;
-    justify-content: space-between;
-    cursor: pointer;
-    border-radius: 15px;
-    &:hover {
-        background-color: rgb(191 219 254);
-    }
-}
-
-.b-head-open {
-    background-color: rgb(219 234 254);
-    height: 40px;
-    display: flex;
-    align-items: center;
-    color: rgb(29 78 216);
-    font-weight: bold;
-    font-size: 16px;
-    justify-content: space-between;
-    cursor: pointer;
-    border-radius: 15px 15px 0 0;
-    &:hover {
-        background-color: rgb(191 219 254);
-    }
 }
 
 .b-name {

@@ -1,7 +1,7 @@
 .nb-root {
-    background-color: #1c3144;
+    background-color: rgb(191 219 254);
     height: 65px;
-    color: #C3D898;
+    color: rgb(29 78 216);
     font-size: 25px;
     font-weight: bold;    
     display: flex;

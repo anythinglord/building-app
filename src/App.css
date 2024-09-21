@@ -20,3 +20,63 @@
   justify-content: center;
   align-items: center;
 }
+
+.smash-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(191 219 254);
+  margin-bottom: 20px;
+  padding: 0 15px 0 15px;
+  border-radius: 15px 15px 15px 0;
+  color: rgb(30 64 175);
+  font-size: 14px;
+}
+
+.smash-box {
+  background-color: rgb(219 234 254);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: rgb(29 78 216);
+  font-weight: bold;
+  font-size: 16px;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 15px;
+  &:hover {
+      background-color: rgb(191 219 254);
+  };
+  transition: border-radius 0.3s ease;
+}
+
+.smash-box-open {
+  border-radius: 15px 15px 0 0;
+}
+
+.smash-item {
+  background-color: rgb(219 234 254);
+  height: 40px;
+  color: rgb(37 99 235);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.smash-item:last-child {
+  background-color: rgb(219 234 254);
+  height: 40px;
+  color: rgb(37 99 235);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 15px 15px;
+}
+
+.smash-icons {
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  height: 40px;
+}
+

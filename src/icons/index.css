@@ -14,13 +14,5 @@
 }
 
 .icon-primary:hover {
-    background-color: var(--main-clear-bg-color);
-}
-
-.icon-secondary {
-    color: rgb(29 78 216);
-}
-
-.icon-secondary:hover {
-    background-color: var(--second-clear-bg-color);
+    color: rgb(59 130 246); /* text-blue-500 */
 }

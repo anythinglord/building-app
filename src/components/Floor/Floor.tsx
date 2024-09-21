@@ -13,40 +13,54 @@ export const Floor: React.FC = () => {
   const { showElements, isOpen } = useHandler();
 
   return (
-    <div>{floors.map((floor, index) => (
-      <div className='b-root' key={index}>
-        <div className="b-head">
-          <div className="b-name" onClick={() => { showElements(index) }}>
-            {floor.name}
-          </div>
-          <div className="b-icons">
-            <GeneralIcon name='trash' />
-            <GeneralIcon name={`chevron-${isOpen(index) ? 'down' : 'right'}`} variant='primary' />
-          </div>
-        </div>
-        {isOpen(index) &&
-          <Droppable droppableId={`spaceGroup-${index}`}>
-            {(provided, snapshot) => (
-              <div 
-                ref={provided.innerRef} {...provided.droppableProps} 
-                className={`${snapshot.isDraggingOver ? 'dragging-over' : null}`}
-                >
-                {floor.spaces.map((space, spaceIndex) => (
-                  <Draggable key={spaceIndex} draggableId={`space-${index}-${spaceIndex}`} index={spaceIndex}>
-                    {(providedDraggable) => (
-                      <div className='draggable' ref={providedDraggable.innerRef} {...providedDraggable.dragHandleProps} {...providedDraggable.draggableProps}>
-                        <Space  name={space.name} />                        
-                      </div>
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        }
+    <div>
+      <div className='smash-title'>
+        <h3>Floors</h3>
+        <button className='general-btn'>
+          <GeneralIcon name='plus' />
+        </button>
       </div>
-    ))}</div>
+      <div>{floors.map((floor, index) => (
+        <div className='b-root' key={index}>
+          <div className={`smash-box ${isOpen(index) ? 'smash-box-open': ''}`}>
+            <div className="b-name" onClick={() => { showElements(index) }}>
+              {floor.name}
+            </div>
+            <div className="smash-icons">
+              <button className='general-btn'>
+                <GeneralIcon name='trash' />
+              </button>
+              <div className='flex-all'>
+                <i className={`fa solid fa-chevron-${isOpen(index) ? 'down': 'up' }`}/>
+              </div>
+            </div>
+          </div>
+          {isOpen(index) &&
+            <Droppable droppableId={`spaceGroup-${index}`}>
+              {(provided, snapshot) => (
+                <div
+                  ref={provided.innerRef} {...provided.droppableProps}
+                  className={`${snapshot.isDraggingOver ? 'dragging-over' : null}`}
+                >
+                  {floor.spaces.map((space, spaceIndex) => (
+                    <Draggable key={spaceIndex} draggableId={`space-${index}-${spaceIndex}`} index={spaceIndex}>
+                      {(providedDraggable) => (
+                        <div className='smash-item draggable' ref={providedDraggable.innerRef} {...providedDraggable.dragHandleProps} {...providedDraggable.draggableProps}>
+                          <Space name={space.name} />
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          }
+        </div>
+      ))}
+      </div>
+    </div>
+
 
   )
 }
