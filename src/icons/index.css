@@ -1,17 +1,16 @@
 .icon-root {
-    background-color: var(--second-bg-color);
-    height: 34px;
-    width: 34px;
+    height: 30px;
+    width: 30px;
     font-size: 17px;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 17px;
+    border-radius: 7px;
 }
 
 .icon-primary {
-    background-color: var(--main-bg-color);
+    color: rgb(29 78 216);
 }
 
 .icon-primary:hover {
@@ -19,7 +18,7 @@
 }
 
 .icon-secondary {
-    background-color: var(--second-bg-color);
+    color: rgb(29 78 216);
 }
 
 .icon-secondary:hover {

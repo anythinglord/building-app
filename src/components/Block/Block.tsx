@@ -52,15 +52,15 @@ export const Block: React.FC = () => {
 
   return (
     <div>
-      <div className='b-buttons'>
-        <h3>Add floors</h3>
+      <div className='b-main'>
+        <h3>Blocks</h3>
         <button className='general-btn' onClick={addBlock}>
           <GeneralIcon name='plus' />
         </button>
       </div>
       {blocks.map((block, index) => (
         <div className='b-root' key={index}>
-          <div className='b-head'>
+          <div className={`${isOpen(index) ? 'b-head-open': 'b-head'}`}>
             <div className="b-name" onClick={() => { showElements(index) }}>
               {block.name}
             </div>
@@ -71,7 +71,9 @@ export const Block: React.FC = () => {
               <button className='general-btn' onClick={() => { removeBlock(index) }}>
                 <GeneralIcon name='trash'  />
               </button>
-              <GeneralIcon name={`chevron-${isOpen(index) ? 'down': 'right' }`} variant='primary'/>
+              <div className='flex-all'>
+                <i className={`fa solid fa-chevron-${isOpen(index) ? 'down': 'up' }`}/>
+              </div>
             </div>
           </div>
           {isOpen(index) &&

@@ -14,3 +14,9 @@
 .static-container {
   max-width: 22vw;
 }
+
+.flex-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

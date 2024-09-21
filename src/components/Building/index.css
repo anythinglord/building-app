@@ -1,8 +1,7 @@
 .bui-root {
-    background-color: var(--second-clear-bg-color);
-    height: 50px;
-    color: #fff;
-    margin-bottom: 2px;
+    background-color: rgb(219 234 254);
+    height: 40px;
+    color: rgb(37 99 235);
     display: flex;
     justify-content: space-between;
     align-items: center;
